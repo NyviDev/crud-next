@@ -18,6 +18,7 @@ export default function Home() {
     obterTodos,
   } = useClientes();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => obterTodos, []);
 
   return (
