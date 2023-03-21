@@ -3,6 +3,7 @@ import Formulario from "@/components/Formulario";
 import Layout from "@/components/Layout";
 import Tabela from "@/components/Tabela";
 import useClientes from "@/hooks/useClientes";
+import { useEffect } from "react";
 
 export default function Home() {
   const {
@@ -14,7 +15,10 @@ export default function Home() {
     salvarCliente,
     exibirTabela,
     tabelaVisivel,
+    obterTodos,
   } = useClientes();
+
+  useEffect(() => obterTodos, []);
 
   return (
     <div

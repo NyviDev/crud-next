@@ -12,7 +12,7 @@ export default function useClientes() {
   const [cliente, setCliente] = useState<Cliente>(Cliente.vazio());
   const [clientes, setClientes] = useState<Cliente[]>([]);
 
-  useEffect(() => obterTodos, []);
+ 
 
   function obterTodos() {
     repo.obterTodos().then((clientes) => {
@@ -48,6 +48,7 @@ export default function useClientes() {
     clienteExcluido,
     clienteSelecionado,
     tabelaVisivel,
+    obterTodos,
     exibirTabela,
   };
 }
