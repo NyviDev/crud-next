@@ -3,9 +3,9 @@ import "firebase/firestore";
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    apiKey: "AIzaSyCuFWTIe6PWtd-W5wUAduryrKBj7hw1f50",
+    authDomain: "teste-d57a4.firebaseapp.com",
+    projectId: "teste-d57a4",
   });
 }
 
