@@ -74,9 +74,11 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Create environment file
-        run: echo -e "NEXT_PUBLIC_FIREBASE_API_KEY=${{ secrets.APIKEY }}\nNEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ secrets.AUTHDOMAIN }}\nNEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ secrets.PROJECTID }}" > .env.local
+        run: |
+        touch .env
+        echo "NEXT_PUBLIC_FIREBASE_API_KEY=${{ secrets.APIKEY }}" > ./.env
       - name: test
-        run: echo$(cat .env.local)
+        run: echo $(cat .env)
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
